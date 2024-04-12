@@ -1,0 +1,12 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Sample extends HttpServlet {
+  
+  public void doGet(HttpServletRequest req, HttpServletResponse resS) throws ServletException {
+    
+    
+    PrintWriter out = req.getWriter();
+    out.print("hello");
+  }
+}

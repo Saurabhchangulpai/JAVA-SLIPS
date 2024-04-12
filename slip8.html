@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Prime Number Checker</title> 
+</head> 
+<body> 
+<h2>Prime Number Checker</h2> 
+<% 
+    int num = Integer.parseInt(request.getParameter("number")); 
+    boolean isPrime = true; 
+    
+    if (num <= 1) {
+        isPrime = false;
+    } else {
+        for(int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    
+    if(isPrime) { 
+        out.println("<p style='color:red'>" + num + " is a prime number.</p>"); 
+    } else { 
+        out.println("<p style='color:red'>" + num + " is not a prime number.</p>"); 
+    }
+%>
+</body> 
+</html>
+
+
+
